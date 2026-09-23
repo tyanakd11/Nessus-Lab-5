@@ -1,6 +1,8 @@
 # Nessus-Lab-5
 Nessus Vulnerability Scanning
 
+Watch this - (https://www.loom.com/share/98724023fbdd4e71a3dd3cab9550ffcf)
+
 **Tools:** Nessus Essentials (Free) · Azure Lab VMs
 **Certification alignment:** CompTIA Security+ · CySA+ · PenTest+
 **Time to complete:** 3–4 hours
@@ -106,35 +108,43 @@ Full command-by-command instructions, including the *why* behind each step, are 
 
 ### 1. Configuring the Basic Network Scan
 Setting up the unauthenticated discovery scan — name, target IP, and scan template — before launch.
-![Basic Network Scan setup](screenshots/01-basic-scan-setup.png)
+
+Basic Network Scan setup <img width="1728" height="1117" alt="Screenshot 2026-08-26 at 7 57 52 PM" src="https://github.com/user-attachments/assets/6f0ea094-356c-4a51-b4dc-1bf274bb1592" />
+
 
 ### 2. Scan Saved to My Scans
 The "Lab Network Discovery" scan saved and ready to launch on demand.
-![Scan saved in My Scans](screenshots/02-scan-saved-my-scans.png)
+Scan saved in My Scans  nacS<img width="1728" height="1117" alt="My scans " src="https://github.com/user-attachments/assets/384bcf27-a2ee-41cb-9a11-9e04833de623" />
+
 
 ### 3. Scan History — Completed
 Confirmation the scan ran to completion, with scan details (policy, severity base, elapsed time) in the side panel.
-![Scan history completed](screenshots/03-scan-history-completed.png)
+Scan history completed <img width="1728" height="1117" alt="Scan History " src="https://github.com/user-attachments/assets/73ddd26b-75a2-4f52-8029-bddb1b64f653" /> 
+
 
 ### 4. Basic Scan Host Results
 Results for target `172.16.0.4` — 3 non-informational findings and 91 Info-level findings, with **Auth: Fail** confirming this was the unauthenticated (outside-in) scan.
-![Basic scan host results](screenshots/04-basic-scan-host-results.png)
+![Basic scan host results] 
 
-### 5. Severity Breakdown
+
 Hovering the vulnerability bar shows the split by severity — the overwhelming majority (96.81%) were Info-level, expected for an unauthenticated scan against a reasonably maintained host.
-![Basic scan severity breakdown](screenshots/05-basic-scan-severity-breakdown.png)
+Basic scan severity breakdown <img width="1728" height="1117" alt="Severity Breakdown" src="https://github.com/user-attachments/assets/b0b0089c-9411-4eda-a0e0-b52b9647f7db" />
+
 
 ### 6. Credentialed Scan Results
 The "Lab Windows Server — Credentialed" scan surfaced 31 distinct vulnerabilities — a far broader picture than the unauthenticated scan, since Nessus could now inspect the host from the inside (SSL, SMB, TLS, SSH, and Windows service enumeration all appear here).
-![Credentialed scan vulnerabilities](screenshots/06-credentialed-scan-vulnerabilities.png)
+Credentialed scan vulnerabilities <img width="1728" height="1117" alt="Credentialed  scan  results" src="https://github.com/user-attachments/assets/e7e3f858-fef4-455a-b398-e68bc358c3db" />
+
 
 ### 7. Finding Detail — SSL Certificate Cannot Be Trusted
 Drilling into the Medium-severity finding (CVSS 6.5): the plugin output confirms the certificate is self-signed rather than issued by a trusted CA, along with the recommended solution.
-![SSL certificate finding detail](screenshots/07-finding-detail-ssl-cert.png)
+SSL certificate finding detail <img width="1728" height="1117" alt="SSL Cert  Can&#39;t be Trusted" src="https://github.com/user-attachments/assets/c7697473-72fd-41d7-aabf-d3c8c9bc3fa4" />
+
 
 ### 8. Related SSL Findings Group
 The full group of SSL-related findings on the host, showing how Nessus clusters related issues (self-signed certificate, certificate info, supported cipher suites) together for triage.
-![SSL finding group](screenshots/08-ssl-finding-group.png)
+SSL finding group <img width="1728" height="1117" alt="Related SSL Findings" src="https://github.com/user-attachments/assets/3e44ceec-6656-4d3c-9a25-ec913b456ec9" />
+
 
 ## Repository Contents
 
